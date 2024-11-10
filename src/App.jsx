@@ -60,7 +60,7 @@ function App() {
         <input type='text' required value={city} onChange={(event) => changeHandler(event)} placeholder='Enter city name' name='city' />
         <button>Search</button>
       </form>
-      {isLoading ? <p>Loading data…</p> : null}
+      {isLoading ? <p>Loading data. . . </p> : null}
       {showCard ?
         <div className='weather-cards'>
           <Card text={"Temperature"} info={`${weatherData.current.temp_c} °C`} />
