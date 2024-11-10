@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import "./App.css"
 
 const Card = ({ text, info }) => {
@@ -23,7 +23,6 @@ function App() {
     try {
       let res = await fetch(URL);
       let data = await res.json();
-      console.log("data", data)
       return data;
     }
     catch {
@@ -43,7 +42,6 @@ function App() {
     try {
       if (fetchedData.current.temp_c) {
         setWeatherData(fetchedData);
-        console.log(fetchedData.current);
         setIsLoading(false);
         setShowCard(true);
       }
@@ -60,7 +58,7 @@ function App() {
         <input type='text' required value={city} onChange={(event) => changeHandler(event)} placeholder='Enter city name' name='city' />
         <button>Search</button>
       </form>
-      {isLoading ? <p>Loading data. . . </p> : null}
+      {isLoading ? <p>Loading data...</p> : null}
       {showCard ?
         <div className='weather-cards'>
           <Card text={"Temperature"} info={`${weatherData.current.temp_c} °C`} />
