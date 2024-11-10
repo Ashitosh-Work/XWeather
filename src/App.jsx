@@ -57,7 +57,7 @@ function App() {
     <div className='App'>
       <h1>XWEATHER</h1>
       <form onSubmit={(event) => submitHandler(event)} className='search-bar'>
-        <input required value={city} onChange={(event) => changeHandler(event)} placeholder='Enter city name' name='city' />
+        <input type='text' required value={city} onChange={(event) => changeHandler(event)} placeholder='Enter city name' name='city' />
         <button>Search</button>
       </form>
       {isLoading ? <p>Loading data…</p> : null}
